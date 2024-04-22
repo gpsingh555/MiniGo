@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MiniGo - Minimize the effort to run Campaigns</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Digital marketing, minigo media, performance marketing, Social media marketing, Branding, SEO (Search Engine Optimization),advertising,ads,advertisement,facebook ads,google ad,bing ads,youtube ads,tiktok ads,instagram ads,twitter ads,amazon advertising,linkedin ads,free ads,snapchat ads,microsoft ads,ads of the world,advertising agency,programmatic advertising,facebook advertising,google advertising,apple search ads,youtube advertising,a ads,google ads keyword planner,google ad specialist,native advertising,ad words,david ogilvy,spotify ads,amazon ads,digital advertising,online advertising,promotional,social media advertising, Ad, Billboard, Marketing, Brand, Adverts, Graphic design, Target ad, Campaign, PPC (Pay-per-click)" name="keywords">
+    <meta content="Minidigital®, is a transparent, indigenous, data-driven Artificial Intelligence / Machine Learning System that connects the Brands to the Targeted Audiences in Real-Time Environment which makes it one of the most effective and efficient ad-stack tech platforms. It’s a single platform for accessing global inventory over OEM, Mobile Apps, Video App, and Others. Integrated directly with 1K+ Mobile Applications & 10+ SSPs selling to over 10+ DSPs, Multinational Agencies, and Fortune 20+ Brands in real-time. It has helped brands leverage and reach their target audience to create an impact, boost ROI and sales" name="description">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/global.css' %}" rel="stylesheet">
+    <link href="{% static 'css/signup.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+	    <div class="row screen-height">
+		    <div class="col col-lg-7">
+			    <div class="sign-head" style="padding-top:20px;"><center><b>Welcome to MiniGo !</b></center></div>
+			    <div style="padding-top:20px; color:var(--lil_dark);"><center><b>Sign In To MiniGo</b></center></div>
+				<form method="post" action="{% url 'login' %}">
+					{% csrf_token %}
+					{{ form.non_field_errors }}
+					<div><center>
+						<div class="input-group">
+							<div class="input-group-text in_icon"><img class = "log_logo"src="{% static './img/icon_email.png' %}" alt=""/></div>
+							<input type="email" class="form-control in_field" name="email" placeholder="E-mail..." required/>
+						</div>
+					</center></div>	
+					<div style="padding-top:10px;"><center>
+						<div class="input-group">
+							<div class="input-group-text in_icon"><img class ="log_logo" src="{% static './img/icon_password.png' %}" alt=""/></div>
+							<input type="password" class="form-control in_field" name="password" placeholder="Password..." required/>
+						</div>
+					</center></div>	
+				
+					<div style="margin:70px 0px;"><center>
+						<button type="submit" class="button_smt">Sign In</button>
+					</center></div>
+				</form>
+			</div>  
+		    <div class="col col-lg-5 side-portion">
+			    <div class="sign-head2"><center>Create Account</center></div>
+			    <div class="sign-head3"><center>Don't have account ?</br> Then Sign Up by clicking here.</center></div>
+				<div style="margin:60px 0px;"><center>
+					<a href="{% url 'signup' %}" class="button_ongreen">Sign Up</a>
+				</center></div>
+			</div>
+		</div> 
+	</div> 
+	<div class="col col-xxl-3 col-lg-2 col-sm-0 col-xs-0"></div>
+            {% include "messages.html" %}
+        </div>
+	<!-- bootstrap Javascript -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <!-- jQuery Javascript -->
+	<script src="js/jquery.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+</html>
