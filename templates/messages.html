@@ -1,0 +1,67 @@
+{% if messages %}
+{% for message in messages %}
+<style>
+    .s-head {
+        font-size:20px;
+        font-weight:600;
+        color:#00326C;
+        margin-bottom:5px;
+    }
+    .s-child{
+        font-size:16px;
+        font-weight:400;
+        color:#00326C;
+        margin:0px 0px 1px 0px;
+        font-family: "Times New Roman", Times, serif;
+    }
+    
+    .submit_orng{
+        -webkit-border-radius:20px;
+        -moz-border-radius:20px;
+         border-radius:20px;
+         border:1px solid #ff7020;
+         width:auto;
+         height:38px;
+         color:#ffffff;
+         background-color:#ff7020;
+         padding:0px 30px;
+    }
+    .submit_orng:hover,
+    .submit_orng:focus,
+    .submit_orng:active{
+        color:white;
+    }
+    </style>
+        <!-- modal start -->					
+<div class="modal fade" id="custom_filter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="customfilterlabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-md-11 s-head">Alert</div>
+                <div class="col-md-1 ms-auto"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 s-child">{{message}}</br></div>
+                <div class="col-md-12 s-child">Please Contact your AM.</br></div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn submit_orng" data-bs-dismiss="modal">Understood</button>
+          </div>
+      </div>
+    </div>
+  </div><!-- modal end -->
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var myModal = new bootstrap.Modal(document.getElementById('custom_filter'), {
+              backdrop: 'static',
+              keyboard: false
+          });
+          myModal.show();
+      });
+  </script>
+    
+{% endfor %}
+{% endif %}

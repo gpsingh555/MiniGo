@@ -1,0 +1,54 @@
+body{
+	min-height: 100vh;
+}
+.screen-height{
+	min-height: 100vh;
+}
+:root {
+    --go_green:#3AB399;
+	--input_lite:#F4F8F7;
+    --lil_dark:#434343;
+    --dark:#000000;
+}
+/* CHAT BOX CSS */
+.chat-box{
+	width:80px; position:fixed; right:1%; bottom:1%; padding:0; margin:0;
+}
+/* ACCOUNT DROPDOWN CSS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:0;
+  background-color:white;
+  width:auto;
+  min-width:250px;
+  -webkit-border-radius:20px 20px 20px 20px;
+  -moz-border-radius:20px 20px 20px 20px;
+  border-radius:20px 20px 20px 20px;
+  border: 1px solid #E9E9E9;
+  padding:10px 17px;
+  box-shadow: 0px 8px 16px 0px #E9E9E9;
+  z-index:999999;
+}
+.dropdown-content a {
+  color: black;
+  font-size:16px;
+  font-weight:500;
+  padding:4px 16px;
+  text-decoration: none;
+  display: block;
+  cursor:pointer;
+}
+.dropdown-content>a:focus,
+.dropdown-content>a:active,
+.dropdown-content>a:hover{
+ color:#FF7020;
+ }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
