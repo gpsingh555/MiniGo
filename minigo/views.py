@@ -6,8 +6,11 @@ from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.utils import timezone
 from django.conf import settings
+from django.utils.text import slugify
 from django.contrib import messages
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Q
 from .models import Advertiser, Country, Campaign_Minigo
 from .services.advertiser import create_advertiser
 from .services.campaign.api import create_campaign, update_campaign_status, get_campaign_reports, get_daily_reports, get_country_campaign_records
@@ -27,7 +30,7 @@ from collections import defaultdict
 import pytz
 import csv
 from datetime import datetime, time, timedelta, date
-from .forms import SignupForm, LoginForm
+from .forms import SignupForm, LoginForm, CampaignStepOneForm
 
 
 
@@ -152,3 +155,135 @@ def dashboard_section_view(request):
     campaign_data = campaign_data[:5] if len(campaign_data)>5 else campaign_data
     
     return render(request, 'index.html', {'campaign_data': campaign_data,'status' : status, 'timezone' : timezone_helper(), 'advertiser_id' : advertiser.advertiser_id, "account" : account})
+
+@csrf_exempt
+def update_status(request):
+    if request.method == 'POST':
+        campaign_id = request.POST.get('campaign_id')
+        status = request.POST.get('status')
+        if update_campaign_status(campaign_id=campaign_id, status = status):
+            try:
+                camp_xelo = Campaign_Minigo.objects.get(campaign_id=campaign_id)
+                camp_xelo.status = status.capitalize()
+                camp_xelo.save()
+            except:
+                pass
+            
+        return JsonResponse({'message': 'Status updated successfully'})
+    return JsonResponse({'message': 'Invalid request'}, status=400)
+
+
+def get_custom_search(request):
+    search = request.GET.get('search', '')
+    start_date = request.GET.get('from_date', datetime.now().date().strftime("%Y-%m-%d"))
+    end_date = request.GET.get('to_date', datetime.now().date().strftime("%Y-%m-%d"))
+    filter_checkboxes = request.GET.getlist('filter_checkboxes[]', [])
+    table_checkboxes = request.GET.getlist('table_checkboxes[]', [])
+    order_by = request.GET.get('order_by', '')
+    
+    order = {'6': 'impressions', '7' : 'clicks', '8' : 'grossConversions'}
+
+    advertiser_email = request.user.username
+    advertiser = get_object_or_404(Advertiser, email=advertiser_email)
+    
+    if search:
+        campaigns = list(Campaign_Minigo.objects.filter(advertiser=advertiser).filter(Q(campaign_name__icontains=search) | Q(campaign_id__icontains=search) | Q(placement__icontains=search)))
+        campaigns = [campaign.campaign_id for campaign in campaigns]
+    else :
+        campaigns = None
+
+    records = get_campaign_reports(advertiser_id=advertiser.advertiser_id, campaign_id=campaigns, start_date=start_date, end_date=end_date)
+
+    custom_table_filters = {'all': True, 'impression': True, 'cost': True, 'ctr': True, 'cvr': True, 'ecpm': True, 'cpc': True, 'cpi': True}
+
+    # modified_selected_filters = dict(selected_filters)
+    modified_custom_table_filters = dict(custom_table_filters)
+
+    if table_checkboxes:
+        for key in custom_table_filters.keys():
+            modified_custom_table_filters[key] = key in table_checkboxes
+            
+    if not 'all' in filter_checkboxes:
+        filtered_records = []
+        for record in records:
+            if record['status'] in filter_checkboxes:
+                filtered_records.append(record)
+        records = filtered_records
+        
+    if '-' in order_by:
+        col = order[order_by[0]]
+        records = descend_counting_sort(data=records, key=col)
+        
+    elif '+' in order_by:
+        col = order[order_by[0]]
+        records = ascend_counting_sort(data=records, key=col)
+    
+    context = {
+        'customs': modified_custom_table_filters,
+        'records': records,
+    }
+
+    return render(request, 'table_manage_ads.html', context)
+    
+
+def descend_counting_sort(data, key='clicks'):
+    counts = defaultdict(list)
+    for item in data:
+        counts[item[key]].append(item)
+    
+    sorted_data = []
+    for count in range(max(counts.keys()), -1, -1):
+        sorted_data.extend(counts[count])
+    
+    return sorted_data
+
+
+def ascend_counting_sort(data, key='clicks'):
+    counts = defaultdict(list)
+    for item in data:
+        counts[item[key]].append(item)
+    
+    sorted_data = []
+    for count in range(min(counts.keys()), max(counts.keys()) + 1):
+        sorted_data.extend(counts[count])
+    
+    return sorted_data
+
+
+@login_required
+def create_campaign_section_view(request):
+    advertiser_email = request.user.username
+    advertiser = get_object_or_404(Advertiser, email=advertiser_email)
+    current_step = request.path.strip('/').split('/')[-1]
+
+    if current_step == 'campaign':
+        form = CampaignStepOneForm(request.POST, request.FILES)
+        if request.method == 'POST' and form.is_valid():
+            csv_gaid_path = save_uploaded_file(request.FILES.get('csv_gaid'), 'csv_gaids')
+            data_step1 = {
+                'campaign_type': form.cleaned_data['campaign_type'],
+                'campaign_name': form.cleaned_data['campaign_name'],
+                'promotion_goal': form.cleaned_data['promotion_goal'],
+                'secondary_goal': form.cleaned_data['secondary_goal'],
+                're_target' : form.cleaned_data['re_target'],
+                'csv_gaid' : csv_gaid_path
+            }
+            request.session['data_step1'] = data_step1
+            return redirect('targeting')
+
+        return render(request, 'create_ad.html', {'form': form, 'advertiser_id': advertiser.advertiser_id})
+
+    else:
+        return HttpResponse("Invalid step")
+    
+def save_uploaded_file(file, folder):
+    if not file:
+        return None
+    original_file_name, file_extension = os.path.splitext(file.name)
+    new_file_name = f"{slugify(original_file_name)}{file_extension}"
+    file_path = os.path.join(settings.MEDIA_ROOT, folder, new_file_name)
+    with open(file_path, 'wb+') as destination:
+        for chunk in file.chunks():
+            destination.write(chunk)
+    return file_path
+ 
