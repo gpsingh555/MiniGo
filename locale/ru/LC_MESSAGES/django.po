@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 16:18+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/admin/base_site.html:3
+msgid "Xelo Administration"
+msgstr "Администрация Ксело"
+
+#: templates/data_analysis.html:9 templates/index.html:10
+#: templates/login.html:15 templates/manage_ad.html:9
+#: templates/manage_finance.html:9 templates/signup.html:9
+#: templates/trending_offer.html:9
+msgid "XeLo - We connect Xtra Large World"
+msgstr ""
+
+#: templates/data_analysis.html:32 templates/index.html:37
+#: templates/index.html:104 templates/manage_ad.html:32
+#: templates/manage_finance.html:32
+msgid "Dashboard"
+msgstr "Панель приборов"
+
+#: templates/data_analysis.html:35 templates/index.html:40
+#: templates/manage_ad.html:35 templates/manage_finance.html:35
+msgid "Manage Ads"
+msgstr "Управление объявлениями"
+
+#: templates/data_analysis.html:38 templates/data_analysis.html:99
+#: templates/index.html:43 templates/manage_ad.html:38
+#: templates/manage_finance.html:38
+msgid "Data Analysis"
+msgstr "Анализ данных"
+
+#: templates/data_analysis.html:41 templates/index.html:46
+#: templates/manage_ad.html:41 templates/manage_finance.html:41
+msgid "Manage Finance"
+msgstr "Управление финансами"
+
+#: templates/data_analysis.html:44 templates/index.html:49
+#: templates/manage_ad.html:44 templates/manage_finance.html:44
+msgid "Trending Offers"
+msgstr "Актуальные предложения"
+
+#: templates/data_analysis.html:81 templates/index.html:86
+#: templates/manage_ad.html:81 templates/manage_finance.html:81
+#: templates/trending_offer.html:67
+msgid "Advertiser Id :"
+msgstr "Идентификатор рекламодателя:"
+
+#: templates/data_analysis.html:82 templates/index.html:87
+#: templates/manage_ad.html:82 templates/manage_finance.html:82
+#: templates/trending_offer.html:68
+msgid "Account Details"
+msgstr "Детали учетной записи"
+
+#: templates/data_analysis.html:84 templates/index.html:89
+#: templates/manage_ad.html:84 templates/manage_finance.html:84
+#: templates/trending_offer.html:70
+msgid "Log Out"
+msgstr "Выйти"
+
+#: templates/data_analysis.html:100
+#, fuzzy
+#| msgid "Campaign Name"
+msgid "Campaign Filter"
+msgstr "Название кампании"
+
+#: templates/data_analysis.html:235
+#, fuzzy
+#| msgid "Campaign Name"
+msgid " Campaign Filter"
+msgstr "Название кампании"
+
+#: templates/data_analysis.html:247 templates/data_analysis.html:292
+#: templates/manage_ad.html:255 templates/manage_ad.html:300
+msgid "Cancel"
+msgstr ""
+
+#: templates/data_analysis.html:248 templates/data_analysis.html:293
+#: templates/manage_ad.html:256 templates/manage_ad.html:301
+msgid "Apply"
+msgstr ""
+
+#: templates/data_analysis.html:259 templates/manage_ad.html:268
+msgid "Custom"
+msgstr ""
+
+#: templates/index.html:112 templates/manage_finance.html:103
+msgid "Account Information"
+msgstr "Информация Об Учетной Записи"
+
+#: templates/index.html:113 templates/manage_finance.html:104
+msgid "Passed"
+msgstr "Пройдено"
+
+#: templates/index.html:116 templates/manage_finance.html:107
+msgid "Cost Today"
+msgstr "Стоимость сегодня"
+
+#: templates/index.html:117 templates/manage_finance.html:108
+msgid "This Month's Cost"
+msgstr "Стоимость за этот месяц"
+
+#: templates/index.html:118 templates/manage_finance.html:109
+msgid "Life-span Cost"
+msgstr "Стоимость за всё время"
+
+#: templates/index.html:132
+msgid "Campaign Status"
+msgstr "Статус кампании"
+
+#: templates/index.html:135
+msgid "Active"
+msgstr "Активно"
+
+#: templates/index.html:136
+msgid "Paused"
+msgstr "остановился"
+
+#: templates/index.html:137
+msgid "Pending"
+msgstr "Ожидание"
+
+#: templates/index.html:138
+msgid "Rejected"
+msgstr "Отклонено"
+
+#: templates/index.html:152
+msgid "Last 7 Days Stats"
+msgstr "Статистика за последние 7 дней"
+
+#: templates/index.html:155 templates/index.html:248 templates/index.html:269
+#: templates/index.html:290
+msgid "Install"
+msgstr "Установки"
+
+#: templates/index.html:156 templates/index.html:252 templates/index.html:273
+#: templates/index.html:294
+msgid "Clicks"
+msgstr "Клики"
+
+#: templates/index.html:171
+msgid "Cost Reminder"
+msgstr "Напоминание о стоимости"
+
+#: templates/index.html:179 templates/manage_ad.html:315
+msgid "Campaign"
+msgstr "Кампания"
+
+#: templates/index.html:180 templates/index.html:220
+msgid "Campaign Id"
+msgstr "Идентификатор кампании"
+
+#: templates/index.html:181
+msgid "Advertiser Id"
+msgstr "Идентификатор рекламодателя"
+
+#: templates/index.html:182
+msgid "Today Cost (USD)"
+msgstr "Сегодняшняя стоимость (USD)"
+
+#: templates/index.html:183
+msgid "Monthly Cost (USD)"
+msgstr "Ежемесячная стоимость (USD)"
+
+#: templates/index.html:184
+msgid "Life Time Cost (USD)"
+msgstr "Стоимость за всё время (USD)"
+
+#: templates/index.html:211
+msgid "Recent 7-Days Rejects"
+msgstr "Последние 7 дней отклонено"
+
+#: templates/index.html:219
+msgid "Campaign Name"
+msgstr "Название кампании"
+
+#: templates/index.html:221
+msgid "Advertiser"
+msgstr "Рекламодатель"
+
+#: templates/index.html:245
+msgid "Top 10 Campaigns"
+msgstr "Топ-10 кампаний"
+
+#: templates/index.html:251 templates/index.html:272 templates/index.html:293
+msgid "Cost"
+msgstr "Стоимость"
+
+#: templates/index.html:266
+msgid "Placement Distribution"
+msgstr "Распределение размещения"
+
+#: templates/index.html:287
+msgid "Country Distribution"
+msgstr "Распределение по странам"
+
+#: templates/login.html:37
+msgid "Log in to XeLoop"
+msgstr "Войти в XeLoop"
+
+#: templates/login.html:43
+msgid "Forget Password"
+msgstr "Забыли пароль"
+
+#: templates/login.html:44 templates/signup.html:41
+msgid "Log In"
+msgstr "Войти"
+
+#: templates/login.html:45
+msgid "Don't Have Account"
+msgstr "Нет аккаунта"
+
+#: templates/login.html:45 templates/signup.html:39
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: templates/manage_ad.html:99 templates/manage_ad.html:233
+msgid "Filter"
+msgstr "Фильтр"
+
+#: templates/manage_ad.html:100
+msgid "Create Campaign with AI"
+msgstr "Создать кампанию с искусственным интеллектом"
+
+#: templates/manage_ad.html:108
+msgid "Campaigns"
+msgstr "Кампании"
+
+#: templates/manage_ad.html:118 templates/manage_ad.html:322
+msgid "Create Campaign"
+msgstr "Создать кампанию"
+
+#: templates/manage_ad.html:119
+msgid "Custom Table"
+msgstr "Пользовательская таблица"
+
+#: templates/manage_ad.html:315
+msgid "Enter"
+msgstr "Войти"
+
+#: templates/manage_ad.html:315
+#, fuzzy
+#| msgid "Account Details"
+msgid "Details"
+msgstr "Детали учетной записи"
+
+#: templates/manage_ad.html:321
+msgid "Close"
+msgstr "Закрыть"
+
+#: templates/manage_finance.html:96
+#, fuzzy
+#| msgid "Upload Transaction Details"
+msgid "Transaction History"
+msgstr "Загрузить детали транзакции"
+
+#: templates/manage_finance.html:97
+#, fuzzy
+msgid "XeLoop Bank Details"
+msgstr "Банковские реквизиты XeLoop"
+
+#: templates/manage_finance.html:126
+msgid "Upload Transaction Details"
+msgstr "Загрузить детали транзакции"
+
+#: templates/manage_finance.html:129
+msgid "Image Format"
+msgstr "Формат изображения"
+
+#: templates/manage_finance.html:131
+msgid "Url Format"
+msgstr "Формат URL"
+
+#: templates/manage_finance.html:137
+msgid "Note - Image Format - jpg/jpeg/png"
+msgstr "Примечание - Формат изображения - jpg/jpeg/png"
+
+#: templates/manage_finance.html:151
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/signup.html:31
+msgid "Sign Up to XeLoop"
+msgstr "Зарегистрируйтесь в XeLoop"
+
+#: templates/signup.html:41
+msgid "Already Have Account"
+msgstr "Уже есть аккаунт"
+
+#: xeloop/settings.py:121
+msgid "English"
+msgstr "Английский"
+
+#: xeloop/settings.py:122
+msgid "French"
+msgstr "Французский"
+
+#: xeloop/settings.py:123
+msgid "Spanish"
+msgstr "Испанский"
+
+#: xeloop/settings.py:124
+msgid "Russian"
+msgstr "Русский"

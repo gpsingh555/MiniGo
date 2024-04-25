@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 16:18+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: templates/admin/base_site.html:3
+msgid "Xelo Administration"
+msgstr ""
+
+#: templates/data_analysis.html:9 templates/index.html:10
+#: templates/login.html:15 templates/manage_ad.html:9
+#: templates/manage_finance.html:9 templates/signup.html:9
+#: templates/trending_offer.html:9
+msgid "XeLo - We connect Xtra Large World"
+msgstr "XeLo - Conectamos el Mundo Xtra Grande"
+
+#: templates/data_analysis.html:32 templates/index.html:37
+#: templates/index.html:104 templates/manage_ad.html:32
+#: templates/manage_finance.html:32
+msgid "Dashboard"
+msgstr "Tablero"
+
+#: templates/data_analysis.html:35 templates/index.html:40
+#: templates/manage_ad.html:35 templates/manage_finance.html:35
+msgid "Manage Ads"
+msgstr "Gestionar Anuncios"
+
+#: templates/data_analysis.html:38 templates/data_analysis.html:99
+#: templates/index.html:43 templates/manage_ad.html:38
+#: templates/manage_finance.html:38
+msgid "Data Analysis"
+msgstr "Análisis de Datos"
+
+#: templates/data_analysis.html:41 templates/index.html:46
+#: templates/manage_ad.html:41 templates/manage_finance.html:41
+msgid "Manage Finance"
+msgstr "Gestionar Finanzas"
+
+#: templates/data_analysis.html:44 templates/index.html:49
+#: templates/manage_ad.html:44 templates/manage_finance.html:44
+msgid "Trending Offers"
+msgstr "Ofertas Populares"
+
+#: templates/data_analysis.html:81 templates/index.html:86
+#: templates/manage_ad.html:81 templates/manage_finance.html:81
+#: templates/trending_offer.html:67
+msgid "Advertiser Id :"
+msgstr "ID del Anunciante:"
+
+#: templates/data_analysis.html:82 templates/index.html:87
+#: templates/manage_ad.html:82 templates/manage_finance.html:82
+#: templates/trending_offer.html:68
+msgid "Account Details"
+msgstr "Detalles de la Cuenta"
+
+#: templates/data_analysis.html:84 templates/index.html:89
+#: templates/manage_ad.html:84 templates/manage_finance.html:84
+#: templates/trending_offer.html:70
+msgid "Log Out"
+msgstr "Cerrar Sesión"
+
+#: templates/data_analysis.html:100
+#, fuzzy
+#| msgid "Campaign Name"
+msgid "Campaign Filter"
+msgstr "Nombre de la campaña"
+
+#: templates/data_analysis.html:235
+#, fuzzy
+#| msgid "Campaign Name"
+msgid " Campaign Filter"
+msgstr "Nombre de la campaña"
+
+#: templates/data_analysis.html:247 templates/data_analysis.html:292
+#: templates/manage_ad.html:255 templates/manage_ad.html:300
+msgid "Cancel"
+msgstr ""
+
+#: templates/data_analysis.html:248 templates/data_analysis.html:293
+#: templates/manage_ad.html:256 templates/manage_ad.html:301
+msgid "Apply"
+msgstr ""
+
+#: templates/data_analysis.html:259 templates/manage_ad.html:268
+msgid "Custom"
+msgstr ""
+
+#: templates/index.html:112 templates/manage_finance.html:103
+msgid "Account Information"
+msgstr "Información de la Cuenta"
+
+#: templates/index.html:113 templates/manage_finance.html:104
+msgid "Passed"
+msgstr "Aprobado"
+
+#: templates/index.html:116 templates/manage_finance.html:107
+msgid "Cost Today"
+msgstr "Costo Hoy"
+
+#: templates/index.html:117 templates/manage_finance.html:108
+msgid "This Month's Cost"
+msgstr "Costo de Este Mes"
+
+#: templates/index.html:118 templates/manage_finance.html:109
+msgid "Life-span Cost"
+msgstr "Costo de Toda la Vida"
+
+#: templates/index.html:132
+msgid "Campaign Status"
+msgstr "Estado de la Campaña"
+
+#: templates/index.html:135
+msgid "Active"
+msgstr "Activo"
+
+#: templates/index.html:136
+msgid "Paused"
+msgstr "Pausado"
+
+#: templates/index.html:137
+msgid "Pending"
+msgstr "Pendiente"
+
+#: templates/index.html:138
+msgid "Rejected"
+msgstr "Rechazado"
+
+#: templates/index.html:152
+msgid "Last 7 Days Stats"
+msgstr "Estadísticas de los Últimos 7 Días"
+
+#: templates/index.html:155 templates/index.html:248 templates/index.html:269
+#: templates/index.html:290
+msgid "Install"
+msgstr "Instalar"
+
+#: templates/index.html:156 templates/index.html:252 templates/index.html:273
+#: templates/index.html:294
+msgid "Clicks"
+msgstr "Clics"
+
+#: templates/index.html:171
+msgid "Cost Reminder"
+msgstr "Recordatorio de Costo"
+
+#: templates/index.html:179 templates/manage_ad.html:315
+msgid "Campaign"
+msgstr "Campaña"
+
+#: templates/index.html:180 templates/index.html:220
+msgid "Campaign Id"
+msgstr "ID de la Campaña"
+
+#: templates/index.html:181
+msgid "Advertiser Id"
+msgstr "ID del Anunciante"
+
+#: templates/index.html:182
+msgid "Today Cost (USD)"
+msgstr "Costo Hoy (USD)"
+
+#: templates/index.html:183
+msgid "Monthly Cost (USD)"
+msgstr "Costo mensual (USD)"
+
+#: templates/index.html:184
+msgid "Life Time Cost (USD)"
+msgstr "Costo total (USD)"
+
+#: templates/index.html:211
+msgid "Recent 7-Days Rejects"
+msgstr "Rechazos de los últimos 7 días"
+
+#: templates/index.html:219
+msgid "Campaign Name"
+msgstr "Nombre de la campaña"
+
+#: templates/index.html:221
+msgid "Advertiser"
+msgstr "Anunciante"
+
+#: templates/index.html:245
+msgid "Top 10 Campaigns"
+msgstr "Top 10 Campañas"
+
+#: templates/index.html:251 templates/index.html:272 templates/index.html:293
+msgid "Cost"
+msgstr "Costo"
+
+#: templates/index.html:266
+msgid "Placement Distribution"
+msgstr "Distribución de colocaciones"
+
+#: templates/index.html:287
+msgid "Country Distribution"
+msgstr "Distribución por país"
+
+#: templates/login.html:37
+msgid "Log in to XeLoop"
+msgstr "Iniciar sesión en XeLoop"
+
+#: templates/login.html:43
+msgid "Forget Password"
+msgstr "¿Olvidó su contraseña?"
+
+#: templates/login.html:44 templates/signup.html:41
+#, fuzzy
+#| msgid "Log Out"
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: templates/login.html:45
+msgid "Don't Have Account"
+msgstr "¿No tienes una cuenta?"
+
+#: templates/login.html:45 templates/signup.html:39
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: templates/manage_ad.html:99 templates/manage_ad.html:233
+msgid "Filter"
+msgstr "Filtrar"
+
+#: templates/manage_ad.html:100
+msgid "Create Campaign with AI"
+msgstr "Crear campaña con IA"
+
+#: templates/manage_ad.html:108
+#, fuzzy
+#| msgid "Campaign"
+msgid "Campaigns"
+msgstr "Campaña"
+
+#: templates/manage_ad.html:118 templates/manage_ad.html:322
+msgid "Create Campaign"
+msgstr "Crear Campaña"
+
+#: templates/manage_ad.html:119
+msgid "Custom Table"
+msgstr "Tabla Personalizada"
+
+#: templates/manage_ad.html:315
+msgid "Enter"
+msgstr "Ingresar"
+
+#: templates/manage_ad.html:315
+#, fuzzy
+#| msgid "Account Details"
+msgid "Details"
+msgstr "Detalles de la Cuenta"
+
+#: templates/manage_ad.html:321
+msgid "Close"
+msgstr "Cerrar"
+
+#: templates/manage_finance.html:96
+msgid "Transaction History"
+msgstr "Cargar Detalles de Transacción"
+
+#: templates/manage_finance.html:97
+msgid "XeLoop Bank Details"
+msgstr "Detalles bancarios de XeLoop"
+
+#: templates/manage_finance.html:126
+msgid "Upload Transaction Details"
+msgstr "Cargar Detalles de Transacción"
+
+#: templates/manage_finance.html:129
+msgid "Image Format"
+msgstr "Formato de imagen"
+
+#: templates/manage_finance.html:131
+msgid "Url Format"
+msgstr "Formato de URL"
+
+#: templates/manage_finance.html:137
+msgid "Note - Image Format - jpg/jpeg/png"
+msgstr "Nota - Formato de imagen - jpg/jpeg/png"
+
+#: templates/manage_finance.html:151
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/signup.html:31
+msgid "Sign Up to XeLoop"
+msgstr "Regístrate en XeLoop"
+
+#: templates/signup.html:41
+msgid "Already Have Account"
+msgstr "¿Ya tienes una cuenta?"
+
+#: xeloop/settings.py:121
+msgid "English"
+msgstr "Inglés"
+
+#: xeloop/settings.py:122
+msgid "French"
+msgstr "Francés"
+
+#: xeloop/settings.py:123
+msgid "Spanish"
+msgstr "Español"
+
+#: xeloop/settings.py:124
+msgid "Russian"
+msgstr "Ruso"

@@ -249,6 +249,26 @@ def ascend_counting_sort(data, key='clicks'):
     
     return sorted_data
 
+@login_required
+def manage_ads_section_view(request):
+    """View for managing ads."""
+
+    advertiser = get_advertiser( request.user.username)
+    
+    selected_filters = {'all': True, 'active': True, 'pending': True, 'pause': True, 'rejected': True}
+    custom_table_filters = {'all': True, 'impression': True, 'cost': True, 'ctr': True, 'cvr': True, 'ecpm': True, 'cpc': True, 'cpi': True}
+
+    records = get_campaign_reports(advertiser_id = advertiser.advertiser_id)
+            
+    context = {
+        'filters' : selected_filters,
+        'customs' : custom_table_filters,
+        'records': records,
+        'advertiser_id': advertiser.advertiser_id, 
+        'timezone': timezone_helper(),        
+    }
+    
+    return render(request, 'manage_ad.html', context)
 
 @login_required
 def create_campaign_section_view(request):
